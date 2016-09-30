@@ -1,0 +1,13 @@
+{
+  "datacenter": "local-us",
+  "data_dir": "/tmp/consul",
+  "bootstrap_expect": ${consul_server_count},
+  "log_level": "info",
+  "client_addr": "${consul_instance_private_ip}",
+  "server": true,
+  "enable_syslog": true,
+  "ui": true,
+  "acl_datacenter": "local-us",
+  "acl_master_token": "${consul_token}",
+  "start_join": ${consul_private_ip_list}
+}

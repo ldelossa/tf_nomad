@@ -1,0 +1,21 @@
+bind_addr = "${nomad_instance_private_ip}"
+data_dir = "/tmp/nomad/"
+
+server {
+  enabled = true
+  bootstrap_expect = ${nomad_server_count}
+}
+
+consul {
+  address = "${nomad_instance_private_ip}:8500"
+  auto_advertise = true
+  server_auto_join = true
+  token = "${consul_token}"
+}
+
+region = "local-us"
+datacenter = "local"
+
+data_dir = "/etc/nomad.d/"
+
+enable_syslog = true

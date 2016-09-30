@@ -1,0 +1,9 @@
+{
+  "bind_addr": "${consul_instance_private_ip}",
+  "client_addr": "${consul_instance_private_ip}",
+  "datacenter": "local-us",
+  "data_dir": "/tmp/consul",
+  "log_level": "INFO",
+  "enable_syslog": true,
+  "start_join": ${consul_private_ip_list}
+}
